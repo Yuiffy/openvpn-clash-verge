@@ -14,6 +14,16 @@
 
 ## 使用
 
+### 方式一：使用 Codex skill
+
+把 [`skills/clash-verge-openvpn`](skills/clash-verge-openvpn) 安装到 Codex 的 skills 目录，然后直接告诉 Codex：
+
+> 配置 Clash Verge TUN 和 OpenVPN 同时工作，让 `example.internal` 走 OpenVPN。
+
+skill 会引导 Codex 检查网卡、生成脚本、处理 fake-IP，并验证 OpenVPN 开启和关闭时的路由结果。使用前请把示例域名替换成自己的域名，并确认你允许 Codex 修改 Clash Verge 配置。
+
+### 方式二：手动配置
+
 1. 连接 OpenVPN，运行 `Get-NetAdapter`，找到 TAP/Wintun 网卡的 `Name`。
 2. 复制 [`clash-verge-openvpn.js`](clash-verge-openvpn.js)。
 3. 修改脚本顶部的 `vpnInterface`、`healthCheckUrl`、`targetSuffixes` 和 `vpnServerDomains`。
