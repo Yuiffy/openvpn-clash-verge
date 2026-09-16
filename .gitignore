@@ -1,0 +1,5 @@
+*.log
+*.yaml
+*.yml
+*.json
+.env
