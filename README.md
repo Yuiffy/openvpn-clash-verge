@@ -1,6 +1,6 @@
 # OpenVPN-aware routing for Clash Verge Rev
 
-让指定域名在 OpenVPN 开启时通过 OpenVPN 虚拟网卡访问，OpenVPN 关闭时自动回落到普通 `DIRECT`。
+同时开着 Clash Verge 的 TUN 模式和 OpenVPN 时，让指定域名正常走 OpenVPN，其余流量继续按 Clash 规则工作；关闭 OpenVPN 后，指定域名自动恢复普通直连。
 
 这个项目提供一个 Clash Verge Rev 扩展脚本模板。它使用 Mihomo 的 `direct` 出口、`interface-name` 和 `fallback` 策略组：
 
